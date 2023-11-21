@@ -1,0 +1,47 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "wardrive": {
+            "projectType": "library",
+            "root": "projects/wardrive",
+            "sourceRoot": "projects/wardrive/src",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "projects/wardrive/tsconfig.lib.json",
+                        "project": "projects/wardrive/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/wardrive/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "projects/wardrive/src/test.ts",
+                        "tsConfig": "projects/wardrive/tsconfig.spec.json",
+                        "karmaConfig": "projects/wardrive/karma.conf.js"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "projects/wardrive/tsconfig.lib.json",
+                            "projects/wardrive/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
+        }},
+    "defaultProject": "wardrive"
+}

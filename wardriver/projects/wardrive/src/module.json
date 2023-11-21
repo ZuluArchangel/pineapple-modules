@@ -1,0 +1,10 @@
+{
+    "name": "wardrive",
+    "title": "wardrive",
+    "description": "Wardriving module to support gps on the Pineapple MKVII",
+    "version": "1.0",
+    "author": "ZuluArchangel",
+    "firmware_required": "1.0.0",
+    "devices": ["wifipineapplemk7"]
+}
+
